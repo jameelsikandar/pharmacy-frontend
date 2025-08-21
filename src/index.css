@@ -1,1 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&family=Nunito:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+ 
+  --color-primary: #1E88E5;
+  --color-secondary: #43A047;
+  --color-accent: #81D4FA;
+
+
+  --font-ui: 'Sniglet', 
+ 
+  --font-body: 'Nunito', sans-serif;
+
+}
