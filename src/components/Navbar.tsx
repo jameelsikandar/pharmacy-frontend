@@ -29,7 +29,13 @@ const Navbar: React.FC<NavbarProps> = ({ title, descripition }) => {
             <Bell />
           </button>
 
-          <MainBtn name="Quick Sale" />
+          <MainBtn
+            name="Quick Sale"
+            btnClassName="flex transition-all duration-300 active:scale-95 items-center gap-2 text-xl 
+        text-white bg-primary/80 
+       px-5 py-2 rounded-xl  hover:bg-primary/90 
+       cursor-pointer"
+          />
         </div>
       </div>
     </>
