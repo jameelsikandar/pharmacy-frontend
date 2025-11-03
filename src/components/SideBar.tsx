@@ -9,32 +9,41 @@ import {
   ChartColumn,
   LogOut,
 } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const SideBar = () => {
+  const { pathname } = useLocation();
+
   const menuItems = [
     {
       label: "Dashboard",
       icon: House,
+      path: "/dashboard",
     },
     {
       label: "Inventory",
       icon: Pill,
+      path: "/inventory",
     },
     {
       label: "Point Of Sale",
       icon: ShoppingCart,
+      path: "/pos",
     },
     {
       label: "Clients",
       icon: Users,
+      path: "/client",
     },
     {
       label: "Suppliers",
       icon: Truck,
+      path: "/suppliers",
     },
     {
       label: "Reports",
       icon: ChartColumn,
+      path: "/reports",
     },
   ];
   return (
@@ -54,21 +63,23 @@ const SideBar = () => {
         <p className=" w-full border-b border-black/10 mb-6"></p>
         {/* menues  */}
         <div className="flex flex-col gap-3">
-          {menuItems.map((item, index) => {
+          {menuItems.map((item) => {
             const Icon = item.icon;
+            const isActive = pathname === item.path;
             return (
               <>
-                <div
-                  key={index}
+                <Link
+                  to={item.path}
+                  key={item.path}
                   className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer ${
-                    index === 0
+                    isActive
                       ? "bg-primary/80 text-white"
                       : "hover:bg-primary/20"
                   }`}
                 >
                   <Icon size={24} />
                   <span className="text-lg">{item.label}</span>
-                </div>
+                </Link>
               </>
             );
           })}

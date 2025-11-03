@@ -28,7 +28,7 @@ const LoginPage = () => {
 
       if (response.success) {
         toast.success("Login successful", { duration: 8000 });
-        navigate("/dashboard");
+        navigate("/dashboard", { replace: true });
       } else {
         toast.error(response.message || "Login failed", { duration: 8000 });
       }
